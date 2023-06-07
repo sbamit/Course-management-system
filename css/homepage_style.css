@@ -1,0 +1,174 @@
+
+#all_content{
+    color: maroon;
+    font-size: large;
+    text-align: center;
+    margin-left: auto;
+    margin-left: auto;
+    alignment-adjust: auto;
+}
+
+
+#header{
+    color: black;
+    border: inset;
+    border-color: black;
+    margin: 10px;
+}
+
+#label {
+    margin: 10px;
+}
+
+#main_content{
+    margin: 10px;
+    clear: right;
+}
+
+
+#side_bar{
+    margin-top: 80px;
+    float: left;
+    clear: right;
+    margin-left: 30px;
+    position: relative;
+    width: 150px;
+    margin-right: 50px;
+}
+
+#label{
+    background-color: blue;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+table{
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    border: solid;
+    border-width: 1px;
+    border-color: blue;
+    border-collapse: collapse;
+}
+
+td{
+    text-align: center;
+    border: solid;
+    border-width: 0.5px;
+    border-color: blue;
+    border-collapse: collapse;
+    padding-left:40px;
+    padding-right:40px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+fieldset{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+tr.one {
+    background-color: #99CCFF;
+}
+
+tr.another {
+    background-color: #3399FF;
+}
+
+#login_form.label{
+    text-align: right;
+}
+
+#profile_picture {
+    margin-top: -80px;
+    margin-right: 15px;
+    float: right;
+    clear: both;
+    clear: left;
+}
+
+
+a.download:hover{
+    display: block;
+    background-color: white;
+    color: blue;
+    
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    
+    padding-top: 2px;
+    padding-right: 3px;
+    padding-bottom: 2px;
+    padding-left: 8px;
+}
+
+a.delete:hover{
+    background-color: white;
+    display: block;
+    color: red;
+    
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    
+    padding-top: 2px;
+    padding-right: 3px;
+    padding-bottom: 2px;
+    padding-left: 8px;
+}
+
+
+.course_no{
+    display: inline;
+    background-color: white;
+    color: black;
+}
+a.course_no:hover{
+    display: inline;
+    background-color: white;
+    color: blue;
+    font-size: 1.2em;
+}
+
+a {
+            
+            display: block;
+            font-weight: bold;
+            color: #333333;
+            text-decoration: none;
+            background-color: #CCFFCC;
+            padding-top: 2px;
+            padding-right: 2px;
+            padding-bottom: 2px;
+            padding-left: 8px;
+           
+            background-image: none;
+            border-radius: 30px;
+            margin-top: -10px;
+            margin-bottom: -10px;
+            
+}
+a:hover {
+            background-color: #00FF00;
+            border-radius: 50px;
+            
+            background-image: none;
+            padding-left: 15px;
+            padding-right: 55px;
+            margin-left:-10px;
+            margin-right: -40px;
+            margin-top: -10px;
+            margin-bottom: -10px;
+           
+}
+
+
+

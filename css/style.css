@@ -1,0 +1,49 @@
+
+#all_content{
+    color: maroon;
+    font-size: large;
+    text-align: center;
+    margin-left: auto;
+    margin-left: auto;
+    alignment-adjust: auto;
+}
+
+
+#header{
+    color: black;
+    border: inset;
+    border-color: black;
+    margin: 10px;
+}
+
+#main_content{
+    margin: 10px;
+
+}
+
+#label{
+    background-color: blue;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+table{
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+td{
+   text-align: right; 
+}
+
+fieldset{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+#login_form.label{
+    text-align: right;
+}

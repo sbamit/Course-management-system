@@ -1,0 +1,164 @@
+
+create table student( 
+             std_ID varchar(10) not null,
+			 password varchar(20) not null,
+			 firstname varchar(50) not null,
+			 lastname varchar(50) not null,
+			 sex char(1) not null,
+			 dept varchar(10) not null,
+			 level int,
+			 term int,
+			 cgpa decimal(3,2),
+			 primary key (std_ID)
+			);
+
+
+create table teacher (
+            teacher_ID varchar(10) not null,
+			password varchar(20) not null,
+			firstname varchar(50) not null,
+            lastname varchar(50) not null,
+            sex char(1) not null,
+            dept varchar(10) not null,
+            faculty varchar(10) not null,
+            designation varchar(40)	not null,
+            primary key (teacher_ID)
+           );			
+						
+
+			
+
+			
+
+			
+insert into student (std_ID, password,firstname,lastname,sex,dept,level,term,cgpa) 
+values ('0805001','0805001','Ishat','Rabban','M','CSE',3,2,3.9);
+
+insert into student (std_ID, password,firstname,lastname,sex,dept,level,term,cgpa) 
+values ('0805002','0805002','Radi','Reza','M','CSE',3,2,3.93);
+
+insert into student (std_ID, password,firstname,lastname,sex,dept,level,term,cgpa) 
+values ('0805021','0805021','Himel','Dev','M','CSE',3,2,3.86);
+
+
+
+
+insert into teacher (teacher_ID,password,firstname,lastname,sex,dept,faculty,designation) 
+values ('cse001','cse001','Latiful','Hoque','M','CSE','EEE','Professor');
+
+insert into teacher (teacher_ID, password,firstname,lastname,sex,dept,faculty,designation) 
+values ('cse002','cse002','Sukarna','Barua','M','CSE','EEE','Lecturer');
+
+insert into teacher (teacher_ID, password,firstname,lastname,sex,dept,faculty,designation) 
+values ('cse003','cse003','Sayeed','Mondol','M','CSE','EEE','Associate professor');	
+
+create table course(
+             course_ID varchar(40) not null,
+             course_name varchar(50) not null,
+             course_credit decimal(3,2) not null,
+             course_type char(1) not null,
+             course_no varchar(20) not null,
+             dept varchar(20) not null,
+             level int not null,
+             term int not null,
+             primary key(course_ID)
+            ); 	
+
+insert into course (course_ID,course_name,course_credit,course_type,course_no,dept,level,term)
+values('CSE_301','Concrete math',3.00,'T','CSE 301','CSE',3,2);	
+
+insert into course (course_ID,course_name,course_credit,course_type,course_no,dept,level,term)
+values('CSE_314','Operating System',1.50,'S','CSE 314','CSE',3,2);
+
+insert into course (course_ID,course_name,course_credit,course_type,course_no,dept,level,term)
+values('CSE_300','Compiler',0.75,'S','CSE 300','CSE',3,1);
+
+insert into course (course_ID,course_name,course_credit,course_type,course_no,dept,level,term)
+values('CSE_324','Software Development',0.75,'S','CSE 324','CSE',3,2);
+
+create table student_course(
+             student_ID varchar(50) not null,
+             course_ID varchar(50) not null,
+             foreign key (student_ID) references student (std_ID),
+             foreign key (course_ID) references course(course_ID)
+            );
+			
+insert into student_course (student_ID,course_ID)
+values('0805001','CSE_301');
+
+insert into student_course (student_ID,course_ID)
+values('0805002','CSE_314');
+
+insert into student_course (student_ID,course_ID)
+values('0805002','CSE_301');
+
+create table teacher_course(
+             teacher_ID varchar(50) not null,
+             course_ID varchar(50) not null,
+             foreign key (teacher_ID) references teacher(teacher_ID),
+             foreign key (course_ID) references course(course_ID)
+            );
+
+insert into teacher_course (teacher_ID,course_ID)
+values('cse001','CSE_301');
+
+insert into teacher_course (teacher_ID,course_ID)
+values('cse002','CSE_300');
+
+insert into teacher_course (teacher_ID,course_ID)
+values('cse003','CSE_314');
+
+insert into teacher_course (teacher_ID,course_ID)
+values('cse001','CSE_324');
+
+create table file(
+             file_ID varchar(50) not null,
+             file_name varchar(50) not null,
+			 file_info varchar(500) not null,
+			 upload_date date not null,
+			 file_link varchar(500) not null,
+			 teacher_ID varchar(50) not null,
+			 course_ID varchar(50) not null,
+			 primary key (file_ID),
+			 foreign key (teacher_ID) references teacher(teacher_ID),
+			 foreign key (course_ID)  references course(course_ID)
+			); 
+		
+insert into file (file_ID,file_name,file_info,upload_date,file_link,teacher_ID,course_ID)
+values ('000001','DB soln','Problem set sln','2012-06-01','CSE 301','000001','CSE 301'); 
+
+insert into file (file_ID,file_name,file_info,upload_date,file_link,teacher_ID,course_ID)
+values ('000002','Java demo','Problem demo','2012-04-21','CSE 300','000002','CSE 300'); 
+
+Here Ive faced a problem while inserting data into the table.
+
+
+insert into login (user_ID,password,designation) 
+values ('0805003','123hgf','S');		
+
+insert into login (user_ID,password,designation) 
+values ('000001','12t6Jgf','T');
+			
+
+			
+			delimiter |
+			
+create trigger login_for_std after insert on student
+ for each row begin
+	insert into login set user_ID = NEW.std_ID;
+	insert into login set password = NEW.std_ID;
+	insert into login set designation = 'S';
+ end; 
+|
+
+delimiter ; 
+
+
+create table login (
+             user_ID varchar(50),
+			 password varchar(50),
+			 designation char(1),
+			 primary key(user_ID)
+			);
+
+			
